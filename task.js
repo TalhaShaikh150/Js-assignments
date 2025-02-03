@@ -1,12 +1,17 @@
-let fullName = document.getElementById('name')
- const firstName = prompt("Enter Your First Name")
- const lastName = prompt(" Enter Your Last Name")
+function GetFullName(){
+  const firstName = prompt("Enter Your First Name");
+  const lastName = prompt(" Enter Your Last Name");
+  let fullName = document.getElementById("name");
+  
+  fullName.innerHTML = "'How are You'" + firstName + lastName;
+}
 
- fullName.innerHTML = "How are You <br>" + firstName + lastName
 
 
- let favmobile = prompt("Enter Your Favourate Mobile Number")
+function stringLength() {
+  let favmobile = prompt("Enter Your Favourate Mobile Model");
 
- const message = document.write("My favorate Phone is: " + favmobile)
+  document.write("My favorate Phone is: " + favmobile + "<br>");
 
- document.write(favmobile.length)
+  document.write("Length Of String: " + favmobile.length);
+}
