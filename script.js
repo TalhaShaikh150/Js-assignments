@@ -1,4 +1,3 @@
-
 function ChangeColor() {
   let include = "abcdef0123456789";
   let length = 6;
@@ -13,11 +12,10 @@ function ChangeColor() {
   box.style.backgroundColor = password;
 }
 
-
-
 function GeneratePassword() {
-  let generatedpass = document.getElementById('generatedpass');
-  let length = +prompt("Enter Password Length");
+  let generatedpass = document.getElementById("generatedpass");
+  let length = +prompt(`Password Length Should be greater then 5
+And less then 30`);
   let characters = "";
   let result = "";
 
@@ -50,10 +48,12 @@ function GeneratePassword() {
     characters += "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     console.log("Lower and Upper Case Included");
   } else if (includePassword === 4) {
-    characters += "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    characters +=
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     console.log("Numbers Included");
   } else if (includePassword === 5) {
-    characters += "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_<>?";
+    characters +=
+      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_<>?";
     console.log("Symbols Included");
   } else {
     alert("Invalid Option Selected");
@@ -68,3 +68,88 @@ function GeneratePassword() {
   generatedpass.innerHTML = result;
 }
 
+function CheckLeap() {
+  let input = prompt("Enter To Check If it is Leap Year");
+  let result = document.getElementById("generatedyears");
+
+  if (input % 4 === 0) {
+    if (input % 100 === 0) {
+      if (input % 400 === 0) {
+        result.innerHTML = `${input} It is a leap year.`;
+      } else {
+        result.innerHTML = `${input} It is not a leap year.`;
+      }
+    } else {
+      result.innerHTML = `${input} It is a leap year.`;
+    }
+  } else {
+    result.innerHTML = `${input} It is not a leap year.`;
+  }
+
+}
+
+/*For Task*/
+
+function GetFullName() {
+  const firstName = prompt("Enter Your First Name");
+  const lastName = prompt(" Enter Your Last Name");
+
+  alert(firstName + " " + lastName);
+}
+
+function stringLength() {
+  let favmobile = prompt("Enter Your Favourate Mobile Model");
+
+  document.write("My favorate Phone is: " + favmobile + "<br>");
+
+  document.write("Length Of String: " + favmobile.length);
+}
+
+function findIndex() {
+  let word = prompt("Enter Your Word");
+  let findWord = prompt("Which Letter You Want To find?");
+
+  alert(`The Letter '${findWord}' is at index: ` + word.indexOf(findWord));
+}
+function lastIndex() {
+  let word = prompt("Enter Word");
+  alert(`This Last Index Of ${word} is: ` + word[word.length - 1]);
+}
+
+function find3rdIndex() {
+  let word = prompt("Enter Your Word");
+
+  alert(word.indexOf(word));
+}
+
+function replace() {
+  let city = "Hyderabad" + "<br>";
+  let word = "City : " + city;
+  document.write(word);
+  city = "Islamabad";
+  word = "After Replacement : " + city;
+  document.write(word);
+}
+
+function occurrences() {
+  let message = prompt("Enter Your Paragraph");
+  let find = prompt("Find Word You Want To Replace");
+  let replace = prompt("Enter Word To Replace");
+  let arr = message.split(" ");
+  let result = "";
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === find) {
+      arr[i] = replace;
+    }
+  }
+  result += arr.join(" ");
+  console.log(result);
+}
+
+function upperCase() {
+  let userInput = prompt("Enter Word To Change UpperCase");
+  let upperCase = userInput.toUpperCase();
+  alert(`User Input: ${userInput}
+Upper case: ${upperCase}`);
+}
